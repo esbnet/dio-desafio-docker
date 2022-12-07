@@ -8,7 +8,7 @@ Veja como criar de forma rápida e eficiente um ambiente de desenvolvimento PHP.
 ## Clocar o repositório
 
 Para aproveitar este exeplo basta clonar o realizar um fork do projeto. 
-`git clone https://github.com/`
+`git clone https://github.com/dio-desafio-docker`
 
 ## Criando e subindo os containers
 
