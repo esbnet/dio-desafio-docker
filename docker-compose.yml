@@ -1,0 +1,41 @@
+version: "3.7"
+
+services:
+  web:
+    image: webdevops/php-apache:alpine-php7
+    ports:
+      - "4500:80"
+    volumes:
+      - ~/desafio-docker/app/:/app
+
+    networks:
+      - networks-desafio-dio
+
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: "Desafio123"
+      MYSQL_DATABASE: "agenda"
+    ports:
+      - "3306:3306"
+    volumes:
+      - ~/desafio-docker/data:/var/lib/mysql
+
+    networks:
+      - networks-desafio-dio
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      MYSQL_ROOT_PASSWORD: "Desafio123"
+    ports:
+      - "8080:80"
+    volumes:
+      - ~/desafio-docker/app/admin/uploads.ini:/usr/local/etc/php/conf.d/php-phpmyadmin.ini
+
+    networks:
+      - networks-desafio-dio
+
+networks:
+  networks-desafio-dio:
+    driver: bridge
