@@ -1,6 +1,7 @@
 <html>
 
 <head>
+  <link rel="stylesheet" href="style.css">
   <title>Agenda Pessoal</title>
 </head>
 
@@ -21,12 +22,12 @@ $link = new mysqli($servername, $username, $password, $database);
 
 printf("<h1>Lista de contados</h1>");
 printf("
-<table>
+<table class='table'>
   <thead>
     <tr>
-      <td>Nome</td>
-      <td>email</td>
-      <td>Telefone</td>
+      <td class='cell-heade'>NOME</td>
+      <td class='cell-heade'>EMAIL</td>
+      <td class='cell-heade'>TELEFONE</td>
     </tr>
   </thead>
   <tbody>
@@ -42,7 +43,17 @@ $query = "SELECT * FROM contato";
 
 if ($result = mysqli_query($link, $query)) {
     while ($row = mysqli_fetch_assoc($result)) {
-        printf("<tr><td>%s</td> <td>%s<td/> <td>%s<td/> <tr>", $row["name"], $row["email"], $row["telefone"]);
+        printf(
+            "
+        <tr>
+            <td class='cell'>%s</td> 
+            <td class='cell'>%s</td> 
+            <td class='cell'>%s</td> 
+        <tr>",
+            $row["name"],
+            $row["email"],
+            $row["telefone"]
+        );
     }
     mysqli_free_result($result);
 } else {

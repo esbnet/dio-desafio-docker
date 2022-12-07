@@ -3,13 +3,13 @@
 Veja como criar de forma rápida e eficiente um ambiente de desenvolvimento PHP. Para tal, utilizaremos docker-compose, containers, PHP, Apache e MySQL.
 
 ## Pré-Requisitos
----
+
 - Linux (Ubuntu/Debian) / Windowns (Wsl)
 - Docker
 - Docker-compose
 
 ## Clonar o repositório
----
+
 Para aproveitar este exeplo basta clonar o realizar um fork do projeto. 
 
 ``git clone https://github.com/dio-desafio-docker``
@@ -35,7 +35,7 @@ No navegador de sua preferência digite o endereço:
 ## Script do Banco de Dados
 
 ### Banco de dados: `agenda`
--- --------------------------------------------------------
+
 - Estrutura para tabela `contato`
 
 ```
